@@ -371,7 +371,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 // ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
-#define X_HOME_DIR 1
+#define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
 
@@ -379,7 +379,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing (units are in mm)
-#define X_MAX_POS 200
+#define X_MAX_POS 160
 #define X_MIN_POS 0
 #define Y_MAX_POS 140
 #define Y_MIN_POS 0
@@ -529,7 +529,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // default settings
 
 // #define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200.0*8/3,760*1.1}  // default steps per unit for Ultimaker
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {94.12,94.12,2560,722}  // default steps per unit for Ultimaker
+#define GRETEL_GEARED_E_STEPS_PER_UNIT 722
+#define GRETEL_TITAN_E_STEPS_PER_UNIT 839 // wiki says 417
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {94.12,94.12,2560,GRETEL_TITAN_E_STEPS_PER_UNIT}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 3, 100}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {900,900,10,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
